@@ -6,6 +6,8 @@ import { AboutComponent } from './about';
 import { LoginComponent } from './login';
 import { PowerofeedsComponent } from './powerofeeds';
 import { SignupComponent } from './signup';
+import { ContactComponent } from './contact';
+import { ServiceComponent,ServicedetailsComponent, AddserviceComponent } from './service';
 
 const appRoutes: Routes = [
   {
@@ -32,6 +34,27 @@ const appRoutes: Routes = [
    {
     path: 'powerofeeds',
     component: PowerofeedsComponent
+  }
+  ,
+   {
+    path: 'contact',
+    component: ContactComponent
+  }
+
+  ,
+   {
+    path: 'service',
+    component: ServiceComponent
+  }
+  ,
+   {
+    path: 'service/detail',
+    component: ServicedetailsComponent
+  }
+  ,
+   {
+    path: 'service/add',
+    component: AddserviceComponent
   }
   
 ];

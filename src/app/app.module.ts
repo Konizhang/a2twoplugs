@@ -10,7 +10,15 @@ import { LoginComponent } from './login/login.component';
 import { routing }        from './app.routing';
 import { HttpModule, XHRBackend } from '@angular/http';
 import { SignupComponent } from './signup/signup.component';
-
+import { ContactComponent } from './contact/contact.component';
+import { FrontheaderComponent } from './frontheader/frontheader.component';
+import { FrontfooterComponent } from './frontfooter/frontfooter.component';
+import { ServiceComponent } from './service/service.component';
+import { ServiceService } from './services/service.service';
+import { AddServiceComponent } from './add-service/add-service.component';
+import { ServicedetailsComponent } from './service/servicedetails.component';
+import { AddserviceComponent } from './service/addservice.component';
+import { ErrorComponent } from './error/error.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +26,15 @@ import { SignupComponent } from './signup/signup.component';
     PowerofeedsComponent,
     LandingComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    ContactComponent,
+    FrontheaderComponent,
+    FrontfooterComponent,
+    ServiceComponent,
+    AddServiceComponent,
+    ServicedetailsComponent,
+    AddserviceComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +43,7 @@ import { SignupComponent } from './signup/signup.component';
     routing,
     HttpModule
   ],
-  providers: [],
+  providers: [ServiceService],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })

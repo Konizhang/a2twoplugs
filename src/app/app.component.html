@@ -32,44 +32,19 @@
         ga('send', 'pageview');
     </script>
 
-
-    <style type="text/css">
-
-        .slider-box #slider-comment li p{
-            color: #555;
-            font-weight: 600;
-
-        }
-        .main-template section.section-1 .container .subscribe input {
-            color: #000 !important;
-        }
-
-        .main-template section.section-1 .container .subscribe input {
-           color: #000 !important;
-        }
-
-        @media (max-width: 599px){
-           .main-template .wrapper p {
-          
-            font-size: 16px;
-        }
-        }
-
-
-    </style>
-
 </head>
 
 
 
 <body class="main-template">
 <div class="wrapper">
-    <header>
+    <header *ngIf="!islogin">
         <div class="container">
             <ul class="control-bar">
-                <li><a routerLink="/login" class="btn border" routerLinkActive="active"><span class="help">LOG in</span></a></li>
+                <li><a routerLink="/login" class="btn border" (click)="login()" routerLinkActive="active"><span class="help">LOG in</span></a></li>
                 <li><a routerLink="/signup" class="btn green" routerLinkActive="active"><span class="help">Join now for free</span></a></li>
             </ul>
+
             <a class="logo w-icons-logotype" routerLink="/landing"><img src="img/logo.png" alt=""/></a>
             <nav class="nav navbar-nav">
                 <div class="toggle-nav">
@@ -88,23 +63,48 @@
                             <li>or</li>
                             <li><a href="/login" class="btn border" ><span class="help">LOG in</span></a></li>
                         </ul>
-
-
                     </li>
                 </ul>
             </nav>
-
         </div>
     </header>
-    
+    <header *ngIf="islogin" [ngClass]="logedinheader" >
+        <div class="container">
+            <ul class="control-bar">
+                <li><a routerLink="/logout" class="btn border" (click)="logout()" routerLinkActive="active"><span class="help">LOG out</span></a></li>
+            </ul>
+
+            <a class="logo w-icons-logotype" routerLink="/landing"><img src="img/logo.png" alt=""/></a>
+            <nav class="nav navbar-nav" >
+                <div class="toggle-nav">
+                    <div class="icon-bar"></div>
+                    <div class="icon-bar"></div>
+                    <div class="icon-bar"></div>
+                </div>
+                <ul>
+
+                    <li><a routerLink="/transaction" routerLinkActive="active">Transaction</a></li>
+                    <li><a routerLink="/service"  routerLinkActive="active">Service</a></li>
+                    <li><a routerLink="/message" routerLinkActive="active" >Message</a></li>
+                    <li><a routerLink="/profile" routerLinkActive="active" >Profile</a></li>
+                    <li>
+                        <ul class="control-bar">
+                            <li><a routerLink="/logout" (click)="logout()" class="btn border" ><span class="help">LOG OUT</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+   
       <router-outlet></router-outlet>
 </div>
 <footer>
     <div class="container">
         <div class="copy-info">
             <a class="logo" href="/">twoPLUGS</a>
-            <p class="copyright">Make your paycheck last longer. <br/>Spend eeds, save cash.</p>
-            <p style="font-size: 13px;">A plug for your service and another for your need.</p>
+            <p class="footer_wording">Make your paycheck last longer. <br/>Spend eeds, save cash.</p>
+            <p class="footer_wording">A plug for your service and another for your need.</p>
             <a class="btn green" routerLink="/signup"><span class="help">Join now for free</span></a>
         </div>
         <div class="contact-info">
@@ -127,37 +127,6 @@
         </div>
         <style type="text/css">
 
-
-            @media (min-width:767px) {
-                #landingcopyright {
-                    float:left;
-                    color: #fff;
-                    font-size: 12px;
-                    font-family: "Open Sans",sans-serif;
-                    font-weight: 600;
-                    padding: 5px;
-                    text-transform: uppercase;
-                }
-            }
-            @media (max-width:767px) {
-
-                #landingcopyright {
-                    float: none;
-                    width: 100%;
-                    text-align: center;
-                    color: #fff;
-                    margin-bottom: 10px;
-                    clear: both;
-                    font-size: 12px;
-                    font-family: "Open Sans",sans-serif;
-                    font-weight: 600;
-                    padding: 5px;
-                    text-transform: uppercase;
-                }
-
-
-            }
-
  
         </style>
 
@@ -176,23 +145,19 @@
             </ul>
             <div id="landingcopyright">© twoPLUGS 2016</div>
         </div>
-
-
-
-
     </div>
 </footer>
 
 
 
-<script src="js/jquery-1.10.2.min.js"></script>
-<script src="js/responsiveslides.min.js"> </script>
-<script src="js/zebra_accordion.src.js"></script>
-<script src="js/jquery.fancybox.pack.js"></script>
-<script src="js/jquery.fancybox-media.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.formstyler.min.js" type="text/javascript"></script>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/responsiveslides.min.js"> </script>
+<script src="/js/zebra_accordion.src.js"></script>
+<script src="/js/jquery.fancybox.pack.js"></script>
+<script src="/js/jquery.fancybox-media.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.formstyler.min.js" type="text/javascript"></script>
 
-<script src="js/mainConfig.js" type="text/javascript"></script>
+<script src="/js/mainConfig.js" type="text/javascript"></script>
 </body>
 </html>

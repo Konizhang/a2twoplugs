@@ -19,6 +19,9 @@ import { AddServiceComponent } from './add-service/add-service.component';
 import { ServicedetailsComponent } from './service/servicedetails.component';
 import { AddserviceComponent } from './service/addservice.component';
 import { ErrorComponent } from './error/error.component';
+import { TransactionComponent } from './transaction/transaction.component';
+import { ProfileComponent } from './profile/profile.component';
+import { MessageComponent } from './message/message.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +37,10 @@ import { ErrorComponent } from './error/error.component';
     AddServiceComponent,
     ServicedetailsComponent,
     AddserviceComponent,
-    ErrorComponent
+    ErrorComponent,
+    TransactionComponent,
+    ProfileComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,91 @@
+body{
+margin: -8px;
+}
+
+.pushH2{
+
+margin-top:100px!important;    
+}
+
+.control-bar{
+
+    height: 1000px;
+}
+
+
+.black{
+    background-color: black;
+}
+
+
+
+.logedinheader{
+    height: 53px;  
+    margin: 0;
+    background: #353b44;
+}
+
+.main-banner .top{
+    background:url("/img/banner.jpg") no-repeat 0 0 scroll transparent;
+    position: relative;
+    height: 330px;
+}
+
+body:not(.main-template) footer ul li+li:before {
+
+    content: "";
+ 
+}
+
+body:not(.main-template) h2 {
+    
+    border-bottom: 0px;
+  
+}
+
+.footer_wording{
+    font-size: 13px;
+    line-height: 1.2em;
+}
+
+.main-template [class*="w-icons-profileCtrl"],
+.main-template [class*="w-icons-inc"],
+.main-template [class="w-icons-create"],
+.main-template [class="w-icons-tooltip"],
+.main-template [class*="w-icons-dollar"],
+.main-template [class*="w-icons-flag"],
+.main-template [class*="w-icons-letter"],
+.main-template [class*="w-icons-messages"]
+
+
+{
+    background-image: url(/img/icons.png)!important;
+   
+}
+
+
+
+body:not(.main-template) [class*="w-icons"].w-icons-create {
+   
+    height: 15px;
+}
+
+  .slider-box #slider-comment li p{
+            color: #555;
+            font-weight: 600;
+
+        }
+        .main-template section.section-1 .container .subscribe input {
+            color: #000 !important;
+        }
+
+        .main-template section.section-1 .container .subscribe input {
+           color: #000 !important;
+        }
+
+        @media (max-width: 599px){
+           .main-template .wrapper p {
+          
+            font-size: 16px;
+        }
+        }

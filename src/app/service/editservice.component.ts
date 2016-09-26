@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-addservice',
+  selector: 'app-editservice',
   templateUrl: 'addservice.component.html'
-})
-export class AddserviceComponent implements OnInit {
-  title : string="add";
   
+})
+export class EditserviceComponent implements OnInit {
+
+  title : string="edit";
   constructor() { }
 
   ngOnInit() {

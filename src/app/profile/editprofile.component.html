@@ -1,0 +1,239 @@
+<div class="container">
+        <h2><span class="w-icons-edit large"></span><span class="help">Edit </span></h2>
+        <form class="profileRoom " action="">
+            <div role="tabpanel">
+                <nav>
+                    <ul role="tablist">
+                        <li class="active" role="presentation"><a href="#page" aria-controls="page" role="tab" data-toggle="tab"><span class="help">Page</span></a></li>
+                        <li class=""><a href="#profile" aria-controls="home" role="tab" data-toggle="tab"><span class="help">Profile</span></a></li>
+                        <li class="error-class"><a href="#bio" aria-controls="bio" role="tab" data-toggle="tab"><span class="help">Bio</span></a></li>
+                    </ul>
+                </nav>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active clearfix" id="page">
+                        <div class="customWidth">
+                            <div class="downloadField">
+                                <div class="avatar" id="container_image"><img src="./images/avatar.jpg" alt=""/></div>
+                                <div class="form-group typeFile">
+                                    <input type="file" id="exampleInputFile">
+                                </div>
+                            </div>
+                            <div class="form-group clearfix has-error">
+                                <label for="username" class="control-label">Username</label>
+                                <div class="form-controls">
+                                    <p class="er">Please enter a valid email address.</p>
+                                    <input type="text" id="username"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row double-link-nav">
+                            <div class="col-xs-6 col-xs-offset-6 text-right">
+                                <a href="#">Next</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="profile">
+                        <div class="customWidth">
+                            <div class="form-group clearfix">
+                                <label for="FirstName" class="control-label">First Name <span class="red">*</span></label>
+                                <div class="form-controls">
+                                    <input type="text" id="FirstName"/>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix">
+                                <label for="LastName" class="control-label">Last Name <span class="red">*</span></label>
+                                <div class="form-controls">
+                                    <p class="er">Please enter a valid email address.</p>
+                                    <input type="text" id="LastName"/>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix">
+                                <label for="AddressLine" class="control-label">Sex</label>
+                                <div class="form-controls">
+                                    <ul class="radioButtons">
+                                        <li>
+                                            <input type="radio" id="sexRadio1" name="sexRadio" checked/>
+                                            <label for="sexRadio1"><span class="flag"></span>Male</label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="sexRadio2" name="sexRadio"/>
+                                            <label for="sexRadio2"><span class="flag"></span><span class="help">Female</span></label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix">
+                                <label for="AddressLine" class="control-label">Address Line</label>
+                                <div class="form-controls check check2">
+                                    <input type="text" id="AddressLine"/>
+                                    <label for="checkbox1"><input type="checkbox" id="checkbox1" checked/>I don`t want my adress displayed</label>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix">
+                                <label for="City" class="control-label">City/Town</label>
+                                <div class="form-controls">
+                                    <input type="text" id="City"/>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix">
+                                <label for="ZipCode" class="control-label">Zip Code</label>
+                                <div class="form-controls">
+                                    <input type="text" id="ZipCode"/>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix has-error">
+                                <label for="CompanyName" class="control-label">Company Name <span class="w-icons-tooltip" title="Along with your username, this is the name you will known as when providing a service. Note, this name only exist within twoplugs and does not have to be a legal entity"></span></label>
+                                <div class="form-controls cuSelect ink">
+                                    <p class="er">Please enter a valid email address.</p>
+                                    <select name="" id="CompanyName">
+                                        <option value="0"></option>
+                                        <option value="1">Company Name</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <h4>Select your trading network</h4>
+                            <div class="form-group clearfix has-error">
+                                <label for="Country" class="control-label">Country <span class="red">*</span></label>
+                                <div class="form-controls cuSelect">
+                                    <p class="er">Please enter a valid email address.</p>
+                                    <select name="" id="Country">
+                                        <option value="0"></option>
+                                        <option value="1">Canada</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+                                <label for="Country" class="control-label">some text <span class="red">*</span></label>
+                                <div class="form-controls day-control">
+                                    <p class="error-message">error message</p>
+                                    <div class="relative">
+                                        <input name="price" type="text" value="" id="price">
+                                        <div class="day">
+                                            <div class="help">eeds</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix has-error">
+                                <label for="refund_valid" class="control-label">Refund Valid <span
+                                        class="w-icons-tooltip" title=""
+                                        data-original-title="The no of day(s) a refund will be valid for; starting from the date of purchase"></span></label>
+                                <div class="form-controls  day-control">
+                                    <div class="relative">
+                                        <input name="refund_valid" type="text" value="" id="refund_valid">
+
+                                        <div class="day">
+                                            <div class="help">day(s)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix   has-error">
+                                <label for="CompanyName" class="control-label">Company Name <span class="red">*</span>&nbsp;<i class="tooltip w-icons-tooltip" title="" data-original-title="Along with your username, this is the name you will known as when providing a service. Note, this name only exist within twoplugs and does not have to be a legal entity"></i></label>
+                                <div class="form-controls day-control">
+                                    <p class="er">Please enter your company name</p>
+                                    <div class="relative">
+                                        <input class="" placeholder="Company Name" name="companyName" type="text" value="      ">
+                                        <div class="day"><div class="help">Inc</div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix">
+                                <label for="Province" class="control-label">Province/State <span class="red">*</span></label>
+                                <div class="form-controls cuSelect">
+                                    <select name="" id="Province">
+                                        <option value="0"></option>
+                                        <option value="1">Canada</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix">
+                                <label for="Metropolis" class="control-label">Metropolis <span class="red">*</span></label>
+                                <div class="form-controls cuSelect">
+                                    <select name="" id="Metropolis">
+                                        <option value="0"></option>
+                                        <option value="1">Canada</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row double-link-nav">
+                            <div class="col-xs-6 text-left">
+                                <a href="#">Previous</a>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <a href="#">Next</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="bio">
+                        <div class="form-group">
+                            <label for="" class="control-label" style="text-align: left; width: 100%; margin-bottom: 10px;">Add BIo text</label>
+                            <!--<input type="text" id="summernote"/>-->
+                            <textarea name="" id="" cols="30" rows="10" class="jqteTextarea"></textarea>
+                        </div>
+                        <div class="form-group imgHolder">
+                            <label for="" class="control-label">Add your pics</label>
+                            <div class="form-controls">
+                                <ul class="clearfix " id="download-line">
+                                    <li>
+                                        <div class="typeFileAddImg">
+                                            <input type="file" id="file1" value="Browse">
+                                        </div>
+                                        <a href="#" rel="gallery1" class="fancybox-light">
+                                            <img id="img1" alt=""/>
+                                        </a>
+                                        <div class="delete-img" id="delete1"></div>
+                                    </li>
+                                    <li>
+                                        <div class=" typeFileAddImg">
+                                            <input type="file" id="file2" value="Browse">
+                                        </div>
+                                        <a href="#" rel="gallery1" class="fancybox-light">
+                                            <img id="img2" alt=""/>
+                                        </a>
+                                        <div class="delete-img" id="delete2"></div>
+                                    </li>
+                                    <li>
+                                        <div class=" typeFileAddImg">
+                                            <input type="file" id="file3" value="Browse">
+                                        </div>
+                                        <a href="#" rel="gallery1" class="fancybox-light">
+                                            <img id="img3" alt=""/>
+                                        </a>
+                                        <div class="delete-img" id="delete3"></div>
+                                    </li>
+
+                                    <!--<li>-->
+                                        <!--<div class=" typeFileAddImg">-->
+                                            <!--<input type="file" id="addImg1">-->
+                                        <!--</div>-->
+                                    <!--</li>-->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row double-link-nav">
+                            <div class="col-xs-6 text-left">
+                                <a href="#">Previous</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="activatePanel clearfix">
+
+
+                <ul class="pull-right line-btn">
+                    <li><button class="btn btn-default btn-border"><span class="help">CANCEL</span></button></li>
+                    <li><button class="btn btn-success w-btn-success"><span class="help">SAVE CHANGES</span></button></li>
+                </ul>
+                <ul class="line-btn pull-left">
+                    <li><button class="btn btn-border"><span class="w-icons-deActivate"></span><span class="help">DeACTIVATE ACCOUNT</span></button></li>
+                </ul>
+            </div>
+        </form>
+    </div>

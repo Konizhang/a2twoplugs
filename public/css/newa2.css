@@ -55,7 +55,8 @@ body:not(.main-template) h2 {
 .main-template [class*="w-icons-dollar"],
 .main-template [class*="w-icons-flag"],
 .main-template [class*="w-icons-letter"],
-.main-template [class*="w-icons-messages"]
+.main-template [class*="w-icons-messages"],
+.main-template [class*="w-icons-check"]
 
 
 {
@@ -74,18 +75,24 @@ body:not(.main-template) [class*="w-icons"].w-icons-create {
             color: #555;
             font-weight: 600;
 
-        }
-        .main-template section.section-1 .container .subscribe input {
-            color: #000 !important;
-        }
+}
+.main-template section.section-1 .container .subscribe input {
+    color: #000 !important;
+}
 
-        .main-template section.section-1 .container .subscribe input {
-           color: #000 !important;
-        }
+.main-template section.section-1 .container .subscribe input {
+    color: #000 !important;
+}
 
-        @media (max-width: 599px){
-           .main-template .wrapper p {
-          
-            font-size: 16px;
-        }
-        }
+@media (max-width: 599px){
+    .main-template .wrapper p {
+    
+    font-size: 16px;
+}
+}
+
+#servicedetails{
+    margin-top: 50px;
+}
+
+

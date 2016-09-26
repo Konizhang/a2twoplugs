@@ -14,7 +14,11 @@ import { ContactComponent } from './contact/contact.component';
 import { FrontheaderComponent } from './frontheader/frontheader.component';
 import { FrontfooterComponent } from './frontfooter/frontfooter.component';
 import { ServiceComponent } from './service/service.component';
+
 import { ServiceService } from './services/service.service';
+import { ProfileService } from './services/profile.service';
+import { UserService } from './services/user.service';
+
 import { AddServiceComponent } from './add-service/add-service.component';
 import { ServicedetailsComponent } from './service/servicedetails.component';
 import { AddserviceComponent } from './service/addservice.component';
@@ -22,6 +26,9 @@ import { ErrorComponent } from './error/error.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MessageComponent } from './message/message.component';
+import { EditprofileComponent } from './profile/editprofile.component';
+import { EditserviceComponent } from './service/editservice.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +47,10 @@ import { MessageComponent } from './message/message.component';
     ErrorComponent,
     TransactionComponent,
     ProfileComponent,
-    MessageComponent
+    MessageComponent,
+    EditprofileComponent,
+    EditserviceComponent
+   
   ],
   imports: [
     BrowserModule,
@@ -49,7 +59,7 @@ import { MessageComponent } from './message/message.component';
     routing,
     HttpModule
   ],
-  providers: [ServiceService],
+  providers: [ServiceService,ProfileService,UserService],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })

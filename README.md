@@ -6,3 +6,6 @@ it is angular2 project .
 
 koni_zhang@hotmail.com
 copyright twoplugs.inc
+
+
+$ ng github-pages:deploy --message 'deploy(dist): deploy on GitHub pages' 

@@ -3,27 +3,27 @@
             <div class="header row" id="servicedetails">
                 <div class="col-xs-12 col-sm-5">
                     <div class="catering">
-                        <div class="img"><img src="/img/serviceImg.jpg" alt=""/></div>
-                        <div class="caption"></div>
+                        <div class="img" style="background: url('/img/twoplugsuser.jpg ')"><img src="" alt=""/></div>
+                        <div class="caption">{{service?.name}}</div>
                         <div class="status">ACTIVE</div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-7 text-right">
                     <ul class="dataPanel clearfix">
                         <li>
-                            <div class="backbone"><div class="data"><strong>10:46 AM</strong>05/02/15</div></div>
+                            <div class="backbone"><div class="data"><strong>{{service?.updatedAt | date: 'hh:mm a'}}</strong>{{service?.updatedAt | date: 'dd/MM/yyyy'}}</div></div>
                             <div class="gray">UPDATE</div>
                         </li>
                         <li>
-                            <div class="backbone"><div class="big">two Plugs</div></div>
+                            <div class="backbone"><div class="big">{{service?.payment}}</div></div>
                             <span class="gray">PAYMENT TYPE</span>
                         </li>
                         <li>
-                            <div class="backbone"><div class="big">10 <span>(EEDS)</span></div></div>
+                            <div class="backbone"><div class="big">{{service?.price}} <span>(EEDS)</span></div></div>
                             <div class="gray">PRICE</div>
                         </li>
                         <li>
-                            <div class="backbone"><div class="big">0</div></div>
+                            <div class="backbone"><div class="big">{{service?.sales}}</div></div>
                             <div class="gray">SALES</div>
                         </li>
                     </ul>
@@ -50,11 +50,11 @@
                             </tr>
                             <tr>
                                 <td>Refund %</td>
-                                <td>50 EEDS</td>
+                                <td>{{service?.refund/100*service?.price}} EEDS</td>
                             </tr>
                             <tr>
                                 <td>Refund Valid</td>
-                                <td>20 days</td>
+                                <td>{{service?.refundValid}} days</td>
                             </tr>
                             <tr>
                                 <td>Deposit</td>
@@ -62,11 +62,11 @@
                             </tr>
                             <tr>
                                 <td>Category</td>
-                                <td>Misc</td>
+                                <td>{{service?.category}}</td>
                             </tr>
                             <tr>
                                 <td>Sub Category</td>
-                                <td>Personal Trainer</td>
+                                <td>{{service?.category}}</td>
                             </tr>
                             <tr>
                                 <td>City/Town</td>
@@ -74,11 +74,11 @@
                             </tr>
                             <tr>
                                 <td>Network</td>
-                                <td>TORONTO-ONTARIO-CANADA</td>
+                                <td>{{service?.network.city}}-{{service?.network.stateName}}-CANADA</td>
                             </tr>
                             <tr>
                                 <td>Zip Code</td>
-                                <td>M4B 1B4</td>
+                                <td>{{service?.zipcode}}</td>
                             </tr>
 
                             </tbody>
@@ -102,28 +102,11 @@
                             </div>
                         </div>
                         <div class="body">
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam
-                                enim leo, egestas id, aliquam condimentum at, laoreet mattis, massa. Sed eleifend
-                                nonummy diam. Praesent mauris ante, elementum et, bibendum at, posuere sit amet, nibh.
-                                Duis tincidunt lectus quis dui viverra vestibulum. Suspendisse vulputate aliquam dui.
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                                mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-
-                            <p>Nam cursus. Morbi ut mi. Nullam enim leo, egestas id, condimentum at, laoreet mattis,
-                                massa. Sed eleifend nonummy diam. Praesent mauris ante, elementum et, bibendum at,
-                                posuere sit amet, nibhofficia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
-                                amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam enim leo, egestas
-                                id, condimentum at, laoreet mattis, massa. Sed eleifend nonummy diam. Praesent mauris
-                                ante, elementum et, bibendum at, posuere sit amet, nibh</p>
-
-                            <p>Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa. Sed eleifend nonummy
-                                diam. Praesent mauris ante, elementum et, bibendum at, posuere sit amet, nibh Nullam
-                                enim leo, egestas id, condimentum at, laoreet mattis, massa. Sed eleifend nonummy diam.
-                                Praesent mauris ante, elementum et, bibendum at, posuere sit amet, nibh</p>
+                            <p>{{service?.description}}</p>
                             <div class="group">
 
                                 <h5>VIDEO</h5>
-                                <div class="groupCol"><a href="#" class="link">https://www.youtube.com/watch?v=A4itwQ0bb_U</a></div>
+                                <div class="groupCol"><a href="#" class="link">{{serivce?.videourl}}</a></div>
                             </div>
                             <div class="group">
                                 <h5>PHOTOS</h5>

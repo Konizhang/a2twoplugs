@@ -56,7 +56,8 @@ body:not(.main-template) h2 {
 .main-template [class*="w-icons-flag"],
 .main-template [class*="w-icons-letter"],
 .main-template [class*="w-icons-messages"],
-.main-template [class*="w-icons-check"]
+.main-template [class*="w-icons-check"],
+.main-template [class*="w-icons-fork.green"]
 
 
 {

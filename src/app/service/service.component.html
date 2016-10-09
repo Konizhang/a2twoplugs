@@ -77,8 +77,19 @@
                         </div>
                     </div>
                     <table>
+
+                    <tr *ngFor="let service of services">
+                         <td><div class="chapter"><a routerLink="/service/{{service.id}}">{{service.name}}</a></div></td>
+                            <td>
+                                <ul class="control-block">
+                                    <li><a href="#" class="edit"><span class="w-icons-edit"></span></a></li>
+                                    <li><a href="#" class="delete"><span class="w-icons-delete"></span></a></li>
+                                </ul>
+                            </td>
+                    </tr>
+                      
                         <tr>
-                            <td><div class="chapter"><a routerLink="/service/5/edit">GENESIS SOUNDS</a></div></td>
+                            <td><div class="chapter"><a routerLink="/service/5">GENESIS SOUNDS</a></div></td>
                             <td>
                                 <ul class="control-block">
                                     <li><a href="#" class="edit"><span class="w-icons-edit"></span></a></li>
@@ -87,7 +98,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><div class="chapter"><a routerLink="/service/6/edit">PHOTOGRAPHY</a></div></td>
+                            <td><div class="chapter"><a routerLink="/service/6">PHOTOGRAPHY</a></div></td>
                             <td>
                                 <ul class="control-block">
                                     <li><a href="#" class="edit"><span class="w-icons-edit"></span></a></li>

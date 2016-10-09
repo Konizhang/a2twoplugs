@@ -30,4 +30,8 @@ export class ServiceService extends BaseService{
   getServicesByUserid(id:number){
       return  this.http.get(this.base_url+'/'+this.endpoint+'/search/getByUserId?user_id='+id).map(res => res.json() as Service[]);
   }
+
+  getCommentsByServiceid(id:number){
+      return  this.http.get(this.base_url+'/'+this.endpoint+'/search/getByUserId?user_id='+id).map(res => res.json() as Service[]);
+  }
 }

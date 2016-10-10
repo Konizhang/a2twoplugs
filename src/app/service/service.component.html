@@ -73,13 +73,13 @@
                     <div class="caption">
                         <div class="help clearfix">
                             Needs
-                            <span class="badge pull-right">12</span>
+                            <span class="badge pull-right">{{myneeds.length}}</span>
                         </div>
                     </div>
                     <table>
 
-                    <tr *ngFor="let service of services">
-                         <td><div class="chapter"><a routerLink="/service/{{service.id}}">{{service.name}}</a></div></td>
+                    <tr *ngFor="let myneed of myneeds">
+                         <td><div class="chapter"><a routerLink="/service/{{myneed.id}}">{{myneed.name}}</a></div></td>
                             <td>
                                 <ul class="control-block">
                                     <li><a href="#" class="edit"><span class="w-icons-edit"></span></a></li>
@@ -88,51 +88,6 @@
                             </td>
                     </tr>
                       
-                        <tr>
-                            <td><div class="chapter"><a routerLink="/service/5">GENESIS SOUNDS</a></div></td>
-                            <td>
-                                <ul class="control-block">
-                                    <li><a href="#" class="edit"><span class="w-icons-edit"></span></a></li>
-                                    <li><a href="#" class="delete"><span class="w-icons-delete"></span></a></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><div class="chapter"><a routerLink="/service/6">PHOTOGRAPHY</a></div></td>
-                            <td>
-                                <ul class="control-block">
-                                    <li><a href="#" class="edit"><span class="w-icons-edit"></span></a></li>
-                                    <li><a href="#" class="delete"><span class="w-icons-delete"></span></a></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><div class="chapter">LIGHTHOUS PAINTINGS</div></td>
-                            <td>
-                                <ul class="control-block">
-                                    <li><a href="#" class="edit"><span class="w-icons-edit"></span></a></li>
-                                    <li><a href="#" class="delete"><span class="w-icons-delete"></span></a></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><div class="chapter">P9 CANVAS</div></td>
-                            <td>
-                                <ul class="control-block">
-                                    <li><a href="#" class="edit"><span class="w-icons-edit"></span></a></li>
-                                    <li><a href="#" class="delete"><span class="w-icons-delete"></span></a></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><div class="chapter">THE DARK WEB</div></td>
-                            <td>
-                                <ul class="control-block">
-                                    <li><a href="#" class="edit"><span class="w-icons-edit"></span></a></li>
-                                    <li><a href="#" class="delete"><span class="w-icons-delete"></span></a></li>
-                                </ul>
-                            </td>
-                        </tr>
                     </table>
                 </div>
                 <div class="text-center">
@@ -148,128 +103,20 @@
                     <div class="caption">
                         <div class="help clearfix">
                             Services
-                            <span class="badge pull-right">35</span>
+                            <span class="badge pull-right">{{myservices.length}}</span>
                             <a href="service_math_making.html" class="community"><span class="w-icons-community  default-tooltip" data-toggle="tooltip" data-placement="top" title="Service match making"></span></a>
-
                         </div>
                     </div>
                     <table>
-                        <tr>
-                            <td><div class="chapter">GENESIS SOUNDS</div></td>
-                            <td>
-                                <div class="review pull-left">
-                                    <div class="rating">
-                                        <input type="hidden" name="vote-id" value="1"/>
-                                    </div>
-                                    <p><a href="#">Reviews</a></p>
-                                </div>
-                            </td>
-                            <td class="text-center">
-                                <div class="price">
-                                    <div class="size">100</div>
-                                    <p>Price</p>
-                                </div>
-                            </td>
-                            <td>
+                        <tr *ngFor="let myservice of myservices">
+                         <td><div class="chapter"><a routerLink="/service/{{myservice.id}}">{{myservice.name}}</a></div></td>
+                         <td>
                                 <ul class="control-block">
                                     <li><a href="#" class="edit"><span class="w-icons-edit"></span></a></li>
                                     <li><a href="#" class="delete"><span class="w-icons-delete"></span></a></li>
                                 </ul>
                             </td>
-                        </tr>
-                        <tr>
-                            <td><div class="chapter">PHOTOGRAPHY</div></td>
-                            <td>
-                                <div class="review pull-left">
-                                    <div class="rating">
-                                        <input type="hidden" name="vote-id" value="1"/>
-                                    </div>
-                                    <p><a href="#">Reviews</a></p>
-                                </div>
-                            </td>
-                            <td class="text-center">
-                                <div class="price">
-                                    <div class="size">1200</div>
-                                    <p>Price</p>
-                                </div>
-                            </td>
-                            <td>
-                                <ul class="control-block">
-                                    <li><a href="#" class="edit"><span class="w-icons-edit"></span></a></li>
-                                    <li><a href="#" class="delete"><span class="w-icons-delete"></span></a></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><div class="chapter">LIGHTHOUS PAINTINGS</div></td>
-                            <td>
-                                <div class="review pull-left">
-                                    <div class="rating">
-                                        <input type="hidden" name="vote-id" value="1"/>
-                                    </div>
-                                    <p><a href="#">Reviews</a></p>
-                                </div>
-                            </td>
-                            <td class="text-center">
-                                <div class="price">
-                                    <div class="size">10k</div>
-                                    <p>Price</p>
-                                </div>
-                            </td>
-                            <td>
-                                <ul class="control-block">
-                                    <li><a href="#" class="edit"><span class="w-icons-edit"></span></a></li>
-                                    <li><a href="#" class="delete"><span class="w-icons-delete"></span></a></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-
-                            <td><div class="chapter">P9 CANVAS</div></td>
-                            <td>
-                                <div class="review pull-left">
-                                    <div class="rating">
-                                        <input type="hidden" name="vote-id" value="1"/>
-                                    </div>
-                                    <p><a href="#">Reviews</a></p>
-                                </div>
-                            </td>
-                            <td class="text-center">
-                                <div class="price">
-                                    <div class="size">1300</div>
-                                    <p>Price</p>
-                                </div>
-                            </td>
-                            <td>
-                                <ul class="control-block">
-                                    <li><a href="#" class="edit"><span class="w-icons-edit"></span></a></li>
-                                    <li><a href="#" class="delete"><span class="w-icons-delete"></span></a></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><div class="chapter">THE DARK WEB</div></td>
-                            <td>
-                                <div class="review pull-left">
-                                    <div class="rating">
-                                        <input type="hidden" name="vote-id" value="1"/>
-                                    </div>
-                                    <p><a href="#">Reviews</a></p>
-                                </div>
-                            </td>
-                            <td class="text-center">
-                                <div class="price">
-                                    <div class="size">280</div>
-                                    <p>Price</p>
-                                </div>
-                            </td>
-                            <td>
-                                <ul class="control-block">
-                                    <li><a href="#" class="edit"><span class="w-icons-edit"></span></a></li>
-                                    <li><a href="#" class="delete"><span class="w-icons-delete"></span></a></li>
-                                </ul>
-                            </td>
-                        </tr>
+                    </tr>
                     </table>
                 </div>
                 <div class="text-center">
@@ -282,5 +129,3 @@
         </div>
     </div>
 
-
-<!--/{{services._embedded.service |json}}-->

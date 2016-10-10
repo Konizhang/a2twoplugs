@@ -13,13 +13,22 @@ export class ServiceComponent implements OnInit {
 
   services : Service[] = [];
   //profile : Profile = ;
-
+  myneeds  : Service[] = [];
+  myservices :Service[] = [];
   ngOnInit() {
 
-     this.serviceService.getServicesByUserid(15)
-        .subscribe(
+     this.serviceService.getServicesByUserid(15).
+        subscribe(
           services => {
             this.services = services;
+              services.forEach( service =>{
+    
+                if(service.type==1){
+                  this.myneeds.push(service);
+                }else{
+                  this.myservices.push(service);
+               }
+            });
             console.log(services)
         })
     }

@@ -26,9 +26,11 @@ export class ServiceService extends BaseService{
     return this.http.post(this.base_url + this.endpoint,body,{'headers':this.headers});
   }
 
-  deleteService(id:number){}
+  deleteService(id:number){
+       return  this.http.delete(this.base_url+'/'+this.endpoint+'/'+id);
+  }
   getServicesByUserid(id:number){
-      return  this.http.get(this.base_url+'/'+this.endpoint+'/search/getByUserId?user_id='+id).map(res => res.json() as Service[]);
+      return  this.http.get(this.base_url+'/'+this.endpoint+'/search/getByUserId?user_id='+id).map(res => res.json()._embedded.services as Service[]);
   }
 
   getCommentsByServiceid(id:number){

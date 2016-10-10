@@ -3,7 +3,7 @@
             <div class="header row" id="servicedetails">
                 <div class="col-xs-12 col-sm-5">
                     <div class="catering">
-                        <div class="img" style="background: url('/img/twoplugsuser.jpg ')"><img src="" alt=""/></div>
+                        <div class="img" style=""><img src="" alt=""/></div>
                         <div class="caption">{{service?.name}}</div>
                         <div class="status">ACTIVE</div>
                     </div>
@@ -161,4 +161,11 @@
                 </div>
             </div>
         </div>
+
+
+
+               <tr *ngFor="let service of services">
+                         <td>{{service}}
+                            </td>
+                    </tr>
     </section>

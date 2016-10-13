@@ -11,7 +11,7 @@ import { ServiceComponent,ServicedetailsComponent, AddserviceComponent, Editserv
 import { ProfileComponent,EditprofileComponent } from './profile';
 import { MessageComponent } from './message';
 import { TransactionComponent } from './transaction';
-
+import { GuardService } from "./services/guard.service";
 
 const appRoutes: Routes = [
   {    path: '',  redirectTo: '/landing',  pathMatch: 'full'  },
@@ -21,14 +21,14 @@ const appRoutes: Routes = [
   {    path: 'signup',     component: SignupComponent  },
   {    path: 'powerofeeds',component: PowerofeedsComponent  },
   {    path: 'contact',    component: ContactComponent  },
-  {    path: 'service',    component: ServiceComponent  },
-  {    path: 'service/add',component: AddserviceComponent  },
-  {    path: 'service/:id/edit',component: EditserviceComponent  },
-  {    path: 'service/:id',component: ServicedetailsComponent  },
-  {    path: 'message',    component: MessageComponent  },
-  {    path: 'transaction',component: TransactionComponent  },
-  {    path: 'profile/edit',component: EditprofileComponent  },
-  {    path: 'profile/:id',component: ProfileComponent  }
+  {    path: 'service',    component: ServiceComponent , canActivate: [GuardService] },
+  {    path: 'service/add',component: AddserviceComponent , canActivate: [GuardService] },
+  {    path: 'service/:id/edit',component: EditserviceComponent  , canActivate: [GuardService]},
+  {    path: 'service/:id',component: ServicedetailsComponent , canActivate: [GuardService] },
+  {    path: 'message',    component: MessageComponent , canActivate: [GuardService] },
+  {    path: 'transaction',component: TransactionComponent  , canActivate: [GuardService]},
+  {    path: 'profile/edit',component: EditprofileComponent  , canActivate: [GuardService]},
+  {    path: 'profile/:id',component: ProfileComponent , canActivate: [GuardService] }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

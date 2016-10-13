@@ -8,7 +8,7 @@ import { Profile } from '../model/profile';
   templateUrl: 'service.component.html'
 })
 export class ServiceComponent implements OnInit {
-
+  islogin:boolean;
   constructor(private serviceService :ServiceService) { }
 
   services : Service[] = [];
@@ -17,6 +17,7 @@ export class ServiceComponent implements OnInit {
   myservices :Service[] = [];
   ngOnInit() {
 
+     this.islogin=true;
      this.serviceService.getServicesByUserid(15).
         subscribe(
           services => {

@@ -25,6 +25,7 @@ export class ProfileComponent implements OnInit {
     this.router.params
         .map(params =>params['id'])
         .subscribe((id) =>{
+          
           this.profileservice.getProfile(id)
             .subscribe(profile =>{
               this.profile = profile;

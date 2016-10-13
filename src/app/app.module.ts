@@ -18,6 +18,8 @@ import { ServiceComponent } from './service/service.component';
 import { ServiceService } from './services/service.service';
 import { ProfileService } from './services/profile.service';
 import { UserService } from './services/user.service';
+import { GuardService } from './services/guard.service';
+import { AuthService } from './services/auth.service';
 
 import { AddServiceComponent } from './add-service/add-service.component';
 import { ServicedetailsComponent } from './service/servicedetails.component';
@@ -59,7 +61,7 @@ import { EditserviceComponent } from './service/editservice.component';
     routing,
     HttpModule
   ],
-  providers: [ServiceService,ProfileService,UserService],
+  providers: [ServiceService,ProfileService,UserService,AuthService,GuardService],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })

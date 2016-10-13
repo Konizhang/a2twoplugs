@@ -38,10 +38,10 @@
 
 <body class="main-template">
 <div class="wrapper">
-    <header *ngIf="!islogin">
+    <header *ngIf="!isAuth()">
         <div class="container">
             <ul class="control-bar">
-                <li><a routerLink="/login" class="btn border" (click)="login()" routerLinkActive="active"><span class="help">LOG in</span></a></li>
+                <li><a routerLink="/login" class="btn border"  routerLinkActive="active"><span class="help">LOG in</span></a></li>
                 <li><a routerLink="/signup" class="btn green" routerLinkActive="active"><span class="help">Join now for free</span></a></li>
             </ul>
 
@@ -59,19 +59,19 @@
                     <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
                     <li>
                         <ul class="control-bar">
-                            <li><a href="/signup" class="btn green"><span class="help">Join now for free</span></a></li>
+                            <li><a routerLink="/signup" class="btn green"><span class="help">Join now for free</span></a></li>
                             <li>or</li>
-                            <li><a href="/login" class="btn border" ><span class="help">LOG in</span></a></li>
+                            <li><a routerLink="/login" class="btn border" ><span class="help">LOG in</span></a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
-    <header *ngIf="islogin" [ngClass]="logedinheader" >
+    <header *ngIf="isAuth()" Class="logedinheader" >
         <div class="container">
             <ul class="control-bar">
-                <li><a routerLink="/logout" class="btn border" (click)="logout()" routerLinkActive="active"><span class="help">LOG out</span></a></li>
+                <li><a class="btn border" (click)="logout()" routerLinkActive="active"><span class="help">LOG out</span></a></li>
             </ul>
 
             <a class="logo w-icons-logotype" routerLink="/landing"><img src="img/logo.png" alt=""/></a>

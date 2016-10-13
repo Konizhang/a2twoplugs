@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Routes,Router, RouterModule ,ActivatedRoute} from '@angular/router';
 import { Subscription } from "rxjs/Rx";
-
+import { AuthService } from "./services/auth.service";
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -14,14 +14,14 @@ export class AppComponent implements OnInit{
   
   params: any;
   fragment: any;
-  islogin:boolean;
+
   
   private subscription: Subscription;
 
   id: string;
   logedinheader :string; 
 
- constructor(private activatedRoute: ActivatedRoute,private router:Router) { 
+ constructor(private activatedRoute: ActivatedRoute,private router:Router,private authservice :AuthService) { 
   //  this.subscription = activatedRoute.fragment.subscribe(
   //     (fragment: any) => this.id = fragment
   //   );
@@ -30,8 +30,6 @@ export class AppComponent implements OnInit{
 
 
   ngOnInit() {
-
-   this.islogin=false;
 
   // this.activatedRoute.url.map(params =>params)
   // .subscribe(params => {
@@ -49,16 +47,14 @@ export class AppComponent implements OnInit{
 
   }
 
-  login(){
-      this.islogin = true;
-      this.logedinheader ="logedinheader";
-      this.router.navigate(['/profile']);
-  }
- 
+ isAuth(){
+   
+   return this.authservice.isAuthenticated();
+ }
 
   logout(){
 
-      this.islogin = false;
+      this.authservice.logout();
       this.logedinheader ="";
       this.router.navigate(['/landing']);
    

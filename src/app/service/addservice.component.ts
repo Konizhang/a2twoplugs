@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 export class AddserviceComponent implements OnInit {
   title : string="add";
   
+  islogin:boolean;
+  
+  logedinheader :string; 
   constructor() { }
 
   ngOnInit() {
+
+     this.islogin = true;
   }
 
 }

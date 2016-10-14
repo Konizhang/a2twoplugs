@@ -97,3 +97,6 @@ body:not(.main-template) [class*="w-icons"].w-icons-create {
 }
 
 
+/*.ng-dirty.ng-invalid{
+    border:2px solid #ff2218;
+} */

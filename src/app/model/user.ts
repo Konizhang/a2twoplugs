@@ -1,8 +1,19 @@
-export class User {
-  username: string;
-  email: string;
-  password: string;
-  active:number;
-  status :number;
-  role: number;
+export interface User {
+   username: string;
+   password: string;
+   active?:number;
+   status? :number;
+   role?: number;
+   email?: string;
+//  constructor($username: string, $email: string, $password: string, $active: number, $status: number, $role: number) {
+// 		this.username = $username;
+// 		this.email = $email;
+// 		this.password = $password;
+// 		this.active = $active;
+// 		this.status = $status;
+// 		this.role = $role;
+// 	}
+
+
+  
 }

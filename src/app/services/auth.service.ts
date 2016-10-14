@@ -56,7 +56,7 @@ export class AuthService {
      
       this.loggedIn = false;
     }
-    console.error(this.loggedIn);
+   
     return this.loggedIn ;
   }
 }

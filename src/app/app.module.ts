@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ApplicationRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { PowerofeedsComponent } from './powerofeeds/powerofeeds.component';
@@ -59,7 +60,9 @@ import { EditserviceComponent } from './service/editservice.component';
     CommonModule,
     FormsModule,
     routing,
-    HttpModule
+    HttpModule,
+    ReactiveFormsModule
+    
   ],
   providers: [ServiceService,ProfileService,UserService,AuthService,GuardService],
   entryComponents: [AppComponent],

@@ -1,45 +1,49 @@
  <div class="container">
-        <h2 class="pushH2"><span class="w-icons-edit large"></span><span class="help">{{title}} Service</span></h2>
-        <form action="" class="signIn profileRoom addServiceForm">
+        <h2 class="pushH2"><span class="w-icons-edit large"></span><span class="help">{{title}} a Service</span></h2>
+        <div class="titledescript">A service is a skill you want to sell. It can be professional (for example Dental Cleaning) or casual (for example an extra hand to help at a party).</div>
+        <form [formGroup]="serviceForm" class="signIn profileRoom addServiceForm" (ngSubmit)="onSubmit()">
             <div class="group">
-                <div class="form-group clearfix">
-                    <label for="addServiceName" class="control-label">Name</label>
+                <div class="form-group clearfix" [ngClass]="{'has-error': serviceForm.controls.name.errors&& serviceForm.controls.name.dirty}">
+                    <label for="addServiceName" class="control-label">Name<span class="red">*</span></label>
                     <div class="form-controls">
-                        <input type="text" id="addServiceName"/>
+                        <input type="text" name="name" id="name" formControlName="name"/>
+                         <p class="er">The username field is required.</p>
                     </div>
+                
                 </div>
-                <div class="form-group clearfix">
+                <div class="form-group clearfix" >
                     <label for="addServiceText" class="control-label">Description</label>
                     <div class="form-controls">
-                        <textarea name="" id="addServiceText" cols="30" rows="10"></textarea>
+                        <textarea name="desc" id="desc" cols="30" rows="10" formControlName="desc"></textarea>
                     </div>
                 </div>
             </div>
             <div class="group">
-                <div class="form-group clearfix">
+                <div class="form-group clearfix" [ngClass]="{'has-error': serviceForm.controls.category.errors&& serviceForm.controls.category.dirty}">
                     <label for="cateringCategory" class="control-label">Category</label>
                     <div class="form-controls cuSelect">
-                        <select name="" id="cateringCategory">
-                            <option value="0"></option>
-                            <option value="1">Category</option>
+                        <select name="category" id="category"  formControlName="category" (change)="getsubcategory(serviceForm.controls.category)" >
+                            <option *ngFor="let  cateogry  of categories"  [value]="cateogry.id">{{cateogry.name}}</option>
                         </select>
+                        <p class="er">The category field is required.</p>
                     </div>
                 </div>
-                <div class="form-group clearfix">
+                <div class="form-group clearfix" [ngClass]="{'has-error': serviceForm.controls.subcategory.errors&& serviceForm.controls.subcategory.dirty}">
                     <label for="cateringSubcategory" class="control-label">Subcategory</label>
                     <div class="form-controls cuSelect">
-                        <select name="" id="cateringSubcategory">
-                            <option value="0"></option>
-                            <option value="1">Subcategory</option>
+                        <select name="subcategory" id="subcategory" formControlName="subcategory">
+                            <option *ngFor="let  subcategory  of subcategories"  [value]="subcategory.id">{{subcategory.name}}</option>
                         </select>
+                         <p class="er">The category field is required.</p>
                     </div>
                 </div>
             </div>
             <div class="group">
-                <div class="form-group clearfix">
+                <div class="form-group clearfix" [ngClass]="{'has-error': serviceForm.controls.price.errors&& serviceForm.controls.price.dirty}">
                     <label for="addServicePrice" class="control-label">Price</label>
                     <div class="form-controls">
-                        <input type="text" id="addServicePrice"/>
+                        <input type="text" name="price" id="price" formControlName="price"/>
+                         <p class="er">The price field is required.</p>
                     </div>
                 </div>
                 <br/>
@@ -61,9 +65,9 @@
                 <div class="form-group clearfix">
                     <label for="cateringPayment" class="control-label">Payment <span class="w-icons-tooltip" title="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam enim leo, egestas id, aliquam condimentum at, laoreet mattis, massa. Sed eleifend nonummy diam. Praesent mauris ante, elementum et, bibendum at, posuere sit amet, nibh. Duis tincidunt lectus quis dui viverra vestibulum. Suspendisse vulputate aliquam dui. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."></span></label>
                     <div class="form-controls cuSelect">
-                        <select name="" id="cateringPayment">
-                            <option value="0"></option>
-                            <option value="1">Payment</option>
+                        <select name="payment" id="Payment">
+                            <option value="twoPLUGS">twoPLUGS</option>
+                            <option value="payafter">Pay After</option>
                         </select>
                     </div>
                 </div>
@@ -74,7 +78,7 @@
                     <div class="form-controls">
                         <ul class="clearfix">
                             <li>
-                                <a href="#">
+                                <a >
                                     <span class="help">
                                         <span class="w-icons-add"></span>
                                         <span class="text">ADD HERE</span>
@@ -82,7 +86,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a>
                                     <span class="help">
                                         <span class="w-icons-add"></span>
                                         <span class="text">ADD HERE</span>
@@ -90,7 +94,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a >
                                     <span class="help">
                                         <span class="w-icons-add"></span>
                                         <span class="text">ADD HERE</span>
@@ -109,8 +113,10 @@
                 <div class="form-group clearfix">
                     <div class="form-controls pull-right text-right">
                         <ul class="check-list">
-                            <li><span class="check check2"><label for="check1"><input type="checkbox" id="check1" checked/><span class="help">Active</span></label></span></li>
-                            <li><span class="check check2"><label for="check2"><input type="checkbox" id="check2"/><span class="help">Bidding Allowed</span></label></span></li>
+                            <li class="check-no-style" id="active_chk" ><input type="checkbox" id="checkAll" /><label for="checkAll" class="bone"><span class="help">Active</span></label></li>
+                            <li class="check-no-style"id="bid_chk" ><input type="checkbox" id="checkAll" /><label for="checkAll" class="bone"><span class="help">Bidding Allowed</span></label></li>
+ 
+                          
                         </ul>
                     </div>
                 </div>
@@ -118,7 +124,7 @@
 
                     <ul class="line-btn">
                         <li><button class="btn btn-border"><span class="help">CANCEL</span></button></li>
-                        <li><button class="btn btn-success w-btn-success"><span class="help">create</span></button></li>
+                        <li><button class="btn btn-success w-btn-success" [disabled]="!serviceForm.valid"><span class="help">create</span></button></li>
                     </ul>
                 </div>
             </div>

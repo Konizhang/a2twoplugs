@@ -26,8 +26,8 @@ public  loginUser : User;
       this.authservice.signinUser(this.loginUser);
       this.islogin = true;
       this.logedinheader ="logedinheader";
-     // this.router.navigate(['/service']);
-      console.log(f);
+      this.router.navigate(['/service']);
+     
   }
  
 }

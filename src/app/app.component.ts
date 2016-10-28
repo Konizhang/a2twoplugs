@@ -25,7 +25,7 @@ export class AppComponent implements OnInit{
   //  this.subscription = activatedRoute.fragment.subscribe(
   //     (fragment: any) => this.id = fragment
   //   );
-
+ //localStorage.removeItem('auth_token');
  }
 
 

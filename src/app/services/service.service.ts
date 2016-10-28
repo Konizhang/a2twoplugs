@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Service } from '../model/services';
+import { Category } from '../model/category';
 import { BaseService}  from '../services/BaseService';
 import { Http, Headers }  from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -10,7 +11,7 @@ import 'rxjs/add/operator/map';
 export class ServiceService extends BaseService{
 
   endpoint : String = "services";
-
+ 
   service  : Service ;
 
   constructor(private http : Http) {
@@ -35,5 +36,8 @@ export class ServiceService extends BaseService{
 
   getCommentsByServiceid(id:number){
       return  this.http.get(this.base_url+'/'+this.endpoint+'/search/getByUserId?user_id='+id).map(res => res.json() as Service[]);
+  }
+   getSubCategoriesByid(id:number){
+      return  this.http.get(this.base_url+'/categories/search/findByParentId'+'?parent_id='+id).map(res => res.json()._embedded.categories as Category[]);
   }
 }

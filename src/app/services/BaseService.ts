@@ -6,6 +6,7 @@ export class BaseService {
      'Content-Type':'application/json'  
    }); 
 
+
    currentUser : Number  = 15;
    constructor() { }
   

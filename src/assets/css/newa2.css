@@ -27,7 +27,7 @@ margin-top:100px!important;
 }
 
 .main-banner .top{
-    background:url("/img/banner.jpg") no-repeat 0 0 scroll transparent;
+    background:url("/assets/img/banner.jpg") no-repeat 0 0 scroll transparent;
     position: relative;
     height: 330px;
 }
@@ -50,7 +50,7 @@ body:not(.main-template) h2 {
 }
 
 .main-template [class*="w-icons"] {
-    background-image: url(/img/icons.png);
+    background-image: url(/assets/img/icons.png);
   
 }
 
@@ -58,7 +58,7 @@ body:not(.main-template) h2 {
     background-position: -1px -28px;
     width: 35px;
     height: 35px;
-    background-image: url(/img/iconsMainSprite.png)!important;
+    background-image: url(/assets/img/iconsMainSprite.png)!important;
 }
 
 
@@ -66,34 +66,34 @@ body:not(.main-template) h2 {
     background-position: -112px -28px;
     width: 35px;
     height: 35px;
-    background-image: url(/img/iconsMainSprite.png)!important;
+    background-image: url(/assets/img/iconsMainSprite.png)!important;
 }
 
 .main-template [class*="w-icons"].w-icons-socInst {
     background-position: -75px -28px;
     width: 35px;
     height: 35px;
-    background-image: url(/img/iconsMainSprite.png)!important;
+    background-image: url(/assets/img/iconsMainSprite.png)!important;
 }
 
 .main-template [class*="w-icons"].w-icons-circle1_1 {
     background-position: -230px -177px;
     width: 61px;
     height: 58px;
-    background-image: url(/img/iconsMainSprite.png)!important;
+    background-image: url(/assets/img/iconsMainSprite.png)!important;
 }
 .main-template [class*="w-icons"].w-icons-circle1_2 {
     background-position: -172px -176px;
     width: 56px;
     height: 58px;
-     background-image: url(/img/iconsMainSprite.png)!important;
+     background-image: url(/assets/img/iconsMainSprite.png)!important;
 }
 
 .main-template [class*="w-icons"].w-icons-circle1_3 {
     background-position: 0 -200px;
     width: 28px;
     height: 50px;
-     background-image: url(/img/iconsMainSprite.png)!important;
+     background-image: url(/assets/img/iconsMainSprite.png)!important;
 }
 
 
@@ -101,7 +101,7 @@ body:not(.main-template) h2 {
     background-position: -133px -175px;
     width: 36px;
     height: 49px;
-     background-image: url(/img/iconsMainSprite.png)!important;
+     background-image: url(/assets/img/iconsMainSprite.png)!important;
 }
 
 body:not(.main-template) [class*="w-icons"].w-icons-create {

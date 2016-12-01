@@ -1,10 +1,10 @@
-import { TwoPLUGSwebPage } from './app.po';
+import { TwoplugsPage } from './app.po';
 
-describe('two-plugsweb App', function() {
-  let page: TwoPLUGSwebPage;
+describe('twoplugs App', function() {
+  let page: TwoplugsPage;
 
   beforeEach(() => {
-    page = new TwoPLUGSwebPage();
+    page = new TwoplugsPage();
   });
 
   it('should display message saying app works', () => {

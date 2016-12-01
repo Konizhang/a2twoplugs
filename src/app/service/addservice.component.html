@@ -1,8 +1,9 @@
  <div class="container">
         <h2 class="pushH2"><span class="w-icons-edit large"></span><span class="help">{{title}} a Service</span></h2>
         <div class="titledescript">A service is a skill you want to sell. It can be professional (for example Dental Cleaning) or casual (for example an extra hand to help at a party).</div>
-        <form [formGroup]="serviceForm" class="signIn profileRoom addServiceForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="serviceForm" #serviceform="ngForm" class="signIn profileRoom addServiceForm" (ngSubmit)="onSubmit()">
             <div class="group">
+                <!-- [ngClass.has-error]="name.invalid&& name.touched"-->
                 <div class="form-group clearfix" [ngClass]="{'has-error': serviceForm.controls.name.errors&& serviceForm.controls.name.dirty}">
                     <label for="addServiceName" class="control-label">Name<span class="red">*</span></label>
                     <div class="form-controls">

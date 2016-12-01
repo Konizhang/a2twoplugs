@@ -1,4 +1,6 @@
-export class TwoPLUGSwebPage {
+import { browser, element, by } from 'protractor';
+
+export class TwoplugsPage {
   navigateTo() {
     return browser.get('/');
   }

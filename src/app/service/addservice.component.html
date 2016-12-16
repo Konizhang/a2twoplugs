@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="group">
-                <div class="form-group clearfix" [ngClass]="{'has-error': serviceForm.controls.category.errors&& serviceForm.controls.category.dirty}">
+                <div class="form-group clearfix" [ngClass]="{'has-error': serviceForm.controls.category.errors && serviceForm.controls.category.dirty}">
                     <label for="cateringCategory" class="control-label">Category</label>
                     <div class="form-controls cuSelect">
                         <select name="category" id="category"  formControlName="category" (change)="getsubcategory(serviceForm.controls.category)" >
@@ -114,10 +114,8 @@
                 <div class="form-group clearfix">
                     <div class="form-controls pull-right text-right">
                         <ul class="check-list">
-                            <li class="check-no-style" id="active_chk" ><input type="checkbox" id="checkAll" /><label for="checkAll" class="bone"><span class="help">Active</span></label></li>
-                            <li class="check-no-style"id="bid_chk" ><input type="checkbox" id="checkAll" /><label for="checkAll" class="bone"><span class="help">Bidding Allowed</span></label></li>
- 
-                          
+                            <li class="check-no-style" id="active_chk" ><input type="checkbox" id="active_btn" /><label for="active_btn" class="bone"><span class="help">Active</span></label></li>
+                            <li class="check-no-style" id="bid_chk" ><input type="checkbox" id="bidding_btn" /><label for="bidding_btn" class="bone"><span class="help">Bidding Allowed</span></label></li>
                         </ul>
                     </div>
                 </div>

@@ -19,6 +19,7 @@ import { ServiceComponent } from './service/service.component';
 import { ServiceService } from './services/service.service';
 import { ProfileService } from './services/profile.service';
 import { UserService } from './services/user.service';
+import { MessageService } from './services/message.service';
 import { GuardService } from './services/guard.service';
 import { AuthService } from './services/auth.service';
 
@@ -31,6 +32,12 @@ import { ProfileComponent } from './profile/profile.component';
 import { MessageComponent } from './message/message.component';
 import { EditprofileComponent } from './profile/editprofile.component';
 import { EditserviceComponent } from './service/editservice.component';
+
+import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
+import { MessagedetailComponent } from './message/messagedetail.component';
+import { TestComponent } from './test/test.component';
+
 
 @NgModule({
   declarations: [
@@ -52,19 +59,23 @@ import { EditserviceComponent } from './service/editservice.component';
     ProfileComponent,
     MessageComponent,
     EditprofileComponent,
-    EditserviceComponent
-   
-  ],
+    EditserviceComponent,
+    MessagedetailComponent,
+    TestComponent,
+ 
+   ],
   imports: [
+   
+    AlertModule,
     BrowserModule,
     CommonModule,
     FormsModule,
     routing,
     HttpModule,
-    ReactiveFormsModule
-    
+    ReactiveFormsModule,
+    Ng2Bs3ModalModule
   ],
-  providers: [ServiceService,ProfileService,UserService,AuthService,GuardService],
+  providers: [ServiceService,ProfileService,UserService,AuthService,GuardService,MessageService],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })

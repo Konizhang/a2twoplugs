@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,AfterViewInit} from '@angular/core';
 import { Category } from '../model/category';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { ServiceService } from '../services/service.service';
+
+declare var jQuery: any;
+
 @Component({
   selector: 'app-addservice',
   templateUrl: 'addservice.component.html'
@@ -27,7 +30,15 @@ export class AddserviceComponent implements OnInit {
     });
 
   }
+ngAfterViewInit(){
 
+  // jQuery('.typeFile input,.check input,.cuSelect select').styler();
+  //  jQuery('.typeFileAddImg input').styler({
+  //       filePlaceholder: '',
+  //       fileBrowse: 'ADD HERE'
+  //   });
+
+}
   ngOnInit() {
     this.serviceService.getSubCategoriesByid(0).subscribe(
       cateogries => {

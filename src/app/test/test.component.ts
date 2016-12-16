@@ -7,11 +7,11 @@ import { FormsModule } from "@angular/forms";
 
 @Component({
   selector: 'app-login',
-  templateUrl: 'login.component.html',
+  templateUrl: 'test.component.html',
 
 })
-export class LoginComponent implements OnInit {
- 
+export class TestComponent implements OnInit {
+  public viewContainerRef: ViewContainerRef;
   public loginUser: User;
   logedinheader: String;
   islogin: boolean;
@@ -31,6 +31,30 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/service']);
 
   }
- 
+  public alerts: Array<Object> = [
+    {
+      type: 'danger',
+      msg: 'Oh snap! Change a few things up and try submitting again.'
+    },
+    {
+      type: 'success',
+      msg: 'Well done! You successfully read this important alert message.',
+      closable: true
+    },
+     {
+      type: 'danger',
+      msg: 'Well done! You 111successfully read this important alert message.',
+      closable: true,
+      dismissOnTimeout: 3000 
+    }
+  ];
+
+  public closeAlert(i: number): void {
+    this.alerts.splice(i, 1);
+  }
+
+  public addAlert(): void {
+    this.alerts.push({ msg: 'Another alert!', type: 'warning', closable: true, dismissOnTimeout: 3000 });
+  }
 
 }

@@ -1,4 +1,5 @@
 # a2twoPLUGS
+ng g c -it -is modal/componment
 
 This project is use for display the data for twoplugs rest.
 

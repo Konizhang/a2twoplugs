@@ -6,7 +6,7 @@
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active">
-          <a href="#inbox" aria-controls="home" role="tab" data-toggle="tab"><span class="help">Inbox</span></a>
+          <a routerLink="/messages" aria-controls="home" role="tab" data-toggle="tab"><span class="help">Inbox <span class="badge pull-right">{{total}}</span></span></a>
         </li>
         <li role="presentation">
           <a href="#unread" aria-controls="profile" role="tab" data-toggle="tab"><span class="help">Unread <span class="badge pull-right">12</span></span></a>
@@ -16,9 +16,9 @@
         </li>
       </ul>
       <div class="text-center">
-        <a class="btn btn-create" href="#">
+        <a class="btn btn-create" href="javascript:void(0)"  (click)="modal.open()">
           <span class="circle"><span class="w-icons-create"></span></span>
-          <span class="help">new email</span>
+          <span class="help" >new email</span>
         </a>
       </div>
     </aside>
@@ -35,9 +35,9 @@
               <!--</label>-->
               <!--</li>-->
               <li class="check-no-style">
-                <input type="checkbox" id="checkAll" />
+             
                 <label for="checkAll" class="bone">
-                                            <span class="help">All</span>
+                                            <span (click)="toggle()" class="help">All</span>
                                         </label>
               </li>
               <li>
@@ -57,7 +57,7 @@
               </li>
             </ul>
           </div>
-          <div class="pull-right">
+          <!--<div class="pull-right">
             <div class="filter-label">SORT BY</div>
             <div class="cuSelect">
               <select>
@@ -66,190 +66,29 @@
                                     </select>
             </div>
            
-          </div>
+          </div>-->
         </div>
         <div role="tabpanel" class="tab-pane active" id="inbox">
           <table class="table-message">
-            <tr>
+            <tr *ngFor="let message of messages" >
               <td>
                 <div class="check-no-style theme2">
-                  <input type="checkbox" id="check111" />
-                  <label for="check111"></label>
+                  <input type="checkbox" id="{{message.id}}" [checked]="ischecked"/>
+                  <label for="{{message.id}}"></label>
                 </div>
-                <span class="help"><span class="w-icons-letter"></span> <a href="#">Admin</a></span>
+                <span class="help"><span class="w-icons-letter"></span> <a href="#">{{message.sender.username}}</a></span>
               </td>
-              <td><a href="#">Transfer</a></td>
+              <td><a routerLink="/messages/{{message.id}}">{{message.title}}</a></td>
               <td>
-                <div class="light">you sent</div>
+                <div class="light" [innerHTML]="message.content"></div>
               </td>
               <td>
-                <div class="date">10:46
-                  <div>05/02/15</div>
+                <div class="date">{{message.createdAt| date:'y-M-d'}}
+                  <div>{{message.createdAt| date:'shortTime'}}</div>
                 </div>
               </td>
             </tr>
-            <tr>
-              <td>
-                <div class="check-no-style theme2">
-                  <input type="checkbox" id="check2" />
-                  <label for="check2"></label>
-                </div>
-                <span class="help"><span class="w-icons-letter open"></span> <a href="#">Admin</a></span>
-              </td>
-              <td><a href="#">Service Rating</a></td>
-              <td>
-                <div class="light">Ashley rated you</div>
-              </td>
-              <td>
-                <div class="date">10:46
-                  <div>05/02/15</div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="check-no-style theme2">
-                  <input type="checkbox" id="check3" />
-                  <label for="check3"></label>
-                </div>
-                <span class="help"><span class="w-icons-letter"></span> <a href="#">Admin</a></span>
-              </td>
-              <td><a href="#">Transfer</a></td>
-              <td>
-                <div class="light">you sent</div>
-              </td>
-              <td>
-                <div class="date">10:46
-                  <div>05/02/15</div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="check-no-style theme2">
-                  <input type="checkbox" id="check4" />
-                  <label for="check4"></label>
-                </div>
-                <span class="help"><span class="w-icons-letter"></span> <a href="#">Admin</a></span>
-              </td>
-              <td><a href="#">Confirm Delivery</a></td>
-              <td>
-                <div class="light">Purchase Process</div>
-              </td>
-              <td>
-                <div class="date">10:46
-                  <div>05/02/15</div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="check-no-style theme2">
-                  <input type="checkbox" id="check5" />
-                  <label for="check5"></label>
-                </div>
-                <span class="help"><span class="w-icons-letter"></span> <a href="#">Admin</a></span>
-              </td>
-              <td><a href="#">Confirmation Order</a></td>
-              <td>
-                <div class="light">Purchase Process</div>
-              </td>
-              <td>
-                <div class="date">10:46
-                  <div>05/02/15</div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="check-no-style theme2">
-                  <input type="checkbox" id="check6" />
-                  <label for="check6"></label>
-                </div>
-                <span class="help"><span class="w-icons-letter"></span> <a href="#">Admin</a></span>
-              </td>
-              <td><a href="#">Re: Hi test form Tye</a></td>
-              <td>
-                <div class="light">Hi</div>
-              </td>
-              <td>
-                <div class="date">10:46
-                  <div>05/02/15</div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="check-no-style theme2">
-                  <input type="checkbox" id="check7" />
-                  <label for="check7"></label>
-                </div>
-                <span class="help"><span class="w-icons-letter"></span> <a href="#">Admin</a></span>
-              </td>
-              <td><a href="#">Service Refund</a></td>
-              <td>
-                <div class="light">Service Refund</div>
-              </td>
-              <td>
-                <div class="date">10:46
-                  <div>05/02/15</div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="check-no-style theme2">
-                  <input type="checkbox" id="check8" />
-                  <label for="check8"></label>
-                </div>
-                <span class="help"><span class="w-icons-letter"></span> <a href="#">Admin</a></span>
-              </td>
-              <td><a href="#">Service Refund</a></td>
-              <td>
-                <div class="light">Service Refund</div>
-              </td>
-              <td>
-                <div class="date">10:46
-                  <div>05/02/15</div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="check-no-style theme2">
-                  <input type="checkbox" id="check9" />
-                  <label for="check9"></label>
-                </div>
-                <span class="help"><span class="w-icons-letter"></span> <a href="#">Admin</a></span>
-              </td>
-              <td><a href="#">Confirm Delivery</a></td>
-              <td>
-                <div class="light">Purchase Process</div>
-              </td>
-              <td>
-                <div class="date">10:46
-                  <div>05/02/15</div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="check-no-style theme2">
-                  <input type="checkbox" id="check10" />
-                  <label for="check10"></label>
-                </div>
-                <span class="help"><span class="w-icons-letter"></span> <a href="#">Admin</a></span>
-              </td>
-              <td><a href="#">Confirmation Order</a></td>
-              <td>
-                <div class="light">Purchase Process</div>
-              </td>
-              <td>
-                <div class="date">10:46
-                  <div>05/02/15</div>
-                </div>
-              </td>
-            </tr>
+           
           </table>
         </div>
         <div role="tabpanel" class="tab-pane" id="unread"></div>
@@ -280,4 +119,19 @@
   </div>
 </div>
 
+<modal [animation]="animationsEnabled" (onClose)="onClose($event)" #modal>
+    <modal-header [show-close]="true">
+      <h4 class="modal-title">Send Message</h4>
+    </modal-header>
+    <modal-body>
+      <ul>
+       
+      </ul>
+      Selected: <b>{{ modalSelected }}</b>
+    </modal-body>
+    <modal-footer>
+      <button type="button" class="btn btn-success w-btn-success" data-dismiss="modal" (click)="navigateModal.dismiss()"><span class="help">Cancel</span></button>
+      <button type="button" class="btn btn-success w-btn-success" autofocus (click)="navigateModal.close()"><span class="help">asd</span></button>
+    </modal-footer>
+  </modal>
 </section>

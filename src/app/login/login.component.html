@@ -1,46 +1,43 @@
 <div class="popupTheme myPopUpThemeBgNew" style="min-height: 85vh;">
 
-	<form (ngSubmit)="login(f)" class="signIn signUp" style="width: 457px;" autocomplete="false" novalidate name="loginForm" #f="ngForm">
-		<div class="form-header">
-			<h3>Log In{{NgControlStatus}}</h3>
-		</div>
-		<div class="form-body">
-			<div class="form-group clearfix signUp_by_facebook">
-				<a href="/login/fb" class="facebook-btn"><span class="icon"></span><span class="help">Sign1 up with facebook</span></a>
-				<div class="or"><span>or</span></div>
-			</div>
-					
-			<div class="form-group" [ngClass]="{'has-error': username.invalid && username.dirty}">
-				<label for="signInEmail" class="control-label">Username/Email</label>
-				<div class="form-controls">
-					<input type="text" name="username" [(ngModel)]="loginUser.username" required  #username="ngModel" >
-                      <p class="er">The username field is required.</p>
-				</div>
-			</div> 
-			<div class="form-group" [ngClass]="{'has-error': password.invalid && password.dirty}">
-				<label for="signInPassword" class="control-label">Password</label>
 
-				<div class="form-controls"> 
-             		<input type="text" name="password" [(ngModel)]="loginUser.password" required #password="ngModel">
-					   <p class="er">The password field is required.</p> 
-					<br>
-					<a href="forgot">FORGOT YOUR PASSWORD?</a>
-				</div>
-			</div>
+  <form (ngSubmit)="login(f)" class="signIn signUp" style="width: 457px;" autocomplete="false" novalidate name="loginForm"
+    #f="ngForm">
+    <div class="form-header">
+      <h3>Log In{{NgControlStatus}}</h3>
+    </div>
+    <div class="form-body">
+      <div class="form-group clearfix signUp_by_facebook">
+        <a href="/login/fb" class="facebook-btn"><span class="icon"></span><span class="help">Sign1 up with facebook</span></a>
+        <div class="or"><span>or</span></div>
+      </div>
 
-			<div class="form-footer clearfix">
-				<ul class="line-btn">
-					<li><a href="signup" class="btn btn-border"><span class="help">SIGN UP</span></a></li>
-					<li><button class="btn btn-success w-btn-success" ><span class="help">LOG IN</span></button></li>
-				</ul>
-			</div>
+      <div class="form-group" [ngClass]="{'has-error': username.invalid && username.dirty}">
+        <label for="signInEmail" class="control-label">Username/Email</label>
+        <div class="form-controls">
+          <input type="text" name="username" [(ngModel)]="loginUser.username" required #username="ngModel">
+          <p class="er">The username field is required.</p>
+        </div>
+      </div>
+      <div class="form-group" [ngClass]="{'has-error': password.invalid && password.dirty}">
+        <label for="signInPassword" class="control-label">Password</label>
 
-		</div>
-	</form>
+        <div class="form-controls">
+          <input type="text" name="password" [(ngModel)]="loginUser.password" required #password="ngModel">
+          <p class="er">The password field is required.</p>
+          <br>
+          <a href="forgot">FORGOT YOUR PASSWORD?</a>
+        </div>
+      </div>
 
+      <div class="form-footer clearfix">
+        <ul class="line-btn">
+          <li><a href="signup" class="btn btn-border"><span class="help">SIGN UP</span></a></li>
+          <li><button class="btn btn-success w-btn-success"><span class="help">LOG IN</span></button></li>
+        </ul>
+      </div>
 
-
-
+    </div>
+  </form>
 
 </div>
-

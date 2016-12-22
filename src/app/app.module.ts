@@ -23,7 +23,6 @@ import { MessageService } from './services/message.service';
 import { GuardService } from './services/guard.service';
 import { AuthService } from './services/auth.service';
 
-import { AddServiceComponent } from './add-service/add-service.component';
 import { ServicedetailsComponent } from './service/servicedetails.component';
 import { AddserviceComponent } from './service/addservice.component';
 import { ErrorComponent } from './error/error.component';
@@ -51,7 +50,6 @@ import { TestComponent } from './test/test.component';
     FrontheaderComponent,
     FrontfooterComponent,
     ServiceComponent,
-    AddServiceComponent,
     ServicedetailsComponent,
     AddserviceComponent,
     ErrorComponent,

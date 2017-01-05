@@ -1,0 +1,6 @@
+{
+  "/apk": {
+    "target": "http://localhost:3721/apk/v1",
+    "secure": false
+  }
+}

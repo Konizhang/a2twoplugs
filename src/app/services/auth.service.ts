@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Http, Headers } from '@angular/http';
+import { Http, Headers,RequestOptions ,RequestMethod,URLSearchParams} from '@angular/http';
 import { User } from "../model/user";
 import { Router } from "@angular/router";
 
@@ -20,26 +20,32 @@ export class AuthService {
   }
 
   signinUser(user: User) {
-    // this.user = user;
-    // let headers = new Headers();
-    // headers.append('Content-Type', 'application/json');
+    //curl -i localhost:3721/oauth/token -d "grant_type=password&scope=read&username=koni&password=1234567a" -u mobileclient:twoplugs.com
+        let urlSearchParams = new URLSearchParams();
+        urlSearchParams.append('scope', 'read');
+        urlSearchParams.append('grant_type', 'password');
+        urlSearchParams.append('clientId', 'mobileclient');
+        urlSearchParams.append('secret', 'twoplugs.com');
+        let body = urlSearchParams.toString()
+        
+        let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+            headers.append("Authorization", "Basic " + btoa("mobileclient" + ":" + "twoplugs.com")); 
+        let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
 
-    // return this.http
-    //   .post('/login',JSON.stringify({user.username,user.password }), 
-    //     { headers }
-    //   )
-    //   .map(res => res.json())
-    //   .map((res) => {
-    //     if (res.success) {
-    //       localStorage.setItem('auth_token', res.auth_token);
-    //       this.loggedIn = true;
-    //     }
 
-    //     return res.success;
-    //   });
+
+        return  this.http.post("http://localhost:3721/oauth/token?username=koni&password=1234567a",body,options).map(res => res.json()); 
   
-    localStorage.setItem('auth_token', "P12312312322323123");
+         //localStorage.setItem('auth_token', "ad3eb8fc-66a6-4cca-ae8a-c7c60f3ffbb8");
   }
+
+  private serializeObj(obj) {
+    var result = [];
+    for (var property in obj)
+        result.push(encodeURIComponent(property) + "=" + encodeURIComponent(obj[property]));
+
+    return result.join("&");
+}
 
   logout() {
     localStorage.removeItem('auth_token');

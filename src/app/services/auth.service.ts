@@ -39,13 +39,7 @@ export class AuthService {
          //localStorage.setItem('auth_token', "ad3eb8fc-66a6-4cca-ae8a-c7c60f3ffbb8");
   }
 
-  private serializeObj(obj) {
-    var result = [];
-    for (var property in obj)
-        result.push(encodeURIComponent(property) + "=" + encodeURIComponent(obj[property]));
 
-    return result.join("&");
-}
 
   logout() {
     localStorage.removeItem('auth_token');

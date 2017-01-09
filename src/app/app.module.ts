@@ -22,6 +22,9 @@ import { UserService } from './services/user.service';
 import { MessageService } from './services/message.service';
 import { GuardService } from './services/guard.service';
 import { AuthService } from './services/auth.service';
+import { BaseService } from './services/BaseService';
+import { HttpclientService } from './services/httpclient.service';
+
 
 import { ServicedetailsComponent } from './service/servicedetails.component';
 import { AddserviceComponent } from './service/addservice.component';
@@ -73,7 +76,7 @@ import { TestComponent } from './test/test.component';
     ReactiveFormsModule,
     Ng2Bs3ModalModule
   ],
-  providers: [ServiceService,ProfileService,UserService,AuthService,GuardService,MessageService],
+  providers: [ServiceService,ProfileService,UserService,AuthService,GuardService,MessageService,BaseService,HttpclientService],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })

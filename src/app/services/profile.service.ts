@@ -34,7 +34,7 @@ getProfileByUser(user_id:number):Observable<Profile>{
 
   createProfile(profile :Profile){
     const body =JSON.stringify(profile);
-    return this.http.post(this.base_url + this.endpoint,body,{'headers':this.headers});
+    return this.http.post(this.base_url + this.endpoint,body);
   }
 
 }

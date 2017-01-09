@@ -14,14 +14,14 @@ export class UserService extends BaseService{
   constructor(private http : Http) { 
     super();
   }
-
+ 
   getUser(id:number){ 
     return  this.http.get(this.base_url+'/'+this.endpoint+'/'+id).map(res => res.json());
   }
 
   createUser(user :User){
     const body =JSON.stringify(user);
-    return this.http.post(this.base_url + this.endpoint,body,{'headers':this.headers});
+    return this.http.post(this.base_url + this.endpoint,body);
   }
 
 

@@ -18,19 +18,19 @@ export class ServiceComponent implements OnInit {
   ngOnInit() {
 
      this.islogin=true;
-     this.serviceService.getServicesByUserid(15).
+     this.serviceService.getServicesByUserid(this.serviceService.currentUser).
         subscribe(
           services => {
             this.services = services;
               services.forEach( service =>{
     
                 if(service.type==1){
-                  this.myneeds.push(service);
-                }else{
                   this.myservices.push(service);
+                }else{
+                  this.myneeds.push(service);
                }
             });
-            console.log(services)
+           
         })
     }
 

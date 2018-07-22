@@ -5,6 +5,7 @@ export interface User {
    status? :number;
    role?: number;
    email?: string;
+   id?: number;   
 //  constructor($username: string, $email: string, $password: string, $active: number, $status: number, $role: number) {
 // 		this.username = $username;
 // 		this.email = $email;

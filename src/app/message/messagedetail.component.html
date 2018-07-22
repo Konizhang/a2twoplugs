@@ -1,37 +1,13 @@
-<section class="messages">
-        <div class="container">
-            <h2 class="pushH2"><span class="w-icons-messages dark"></span><span class="help">Messages</span></h2>
-            <div role="tabpanel" class="tabsTheme2">
-                <aside>
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active">
-                            <a routerLink="/messages" aria-controls="home" role="tab" data-toggle="tab"><span class="help">Inbox</span></a>
-                        </li>
-                        <li role="presentation">
-                            <a href="#unread" aria-controls="profile" role="tab" data-toggle="tab"><span class="help">Unread <span class="badge pull-right">12</span></span></a>
-                        </li>
-                        <li role="presentation">
-                            <a href="#sentMail" aria-controls="messages" role="tab" data-toggle="tab"><span class="help">Sent Mail <span class="badge pull-right">12</span></span></a>
-                        </li>
-                    </ul>
-                    <div class="text-center">
-                        <a class="btn btn-create" href="#">
-                            <span class="circle"><span class="w-icons-create"></span></span>
-                            <span class="help">new email</span>
-                        </a>
-                    </div>
-                </aside>
-                <div class="content">
+  <div class="content">
                     <!-- Tab panes -->
                     <div class="tab-content">
-                     
+                   
                         <div role="tabpanel" class="tab-pane active" id="inbox">
                             <div class="captionMessage clearfix">
                                 <h4> {{message?.title}}</h4>
                                 <ul class="pull-right">
                                     <li><a href="#" class="btn w-btn-success"><span class="help">Reply</span></a></li>
-                                    <li><a href="#" class="btn w-btn-default"><span class="help">Back</span></a></li>
+                                    <li><a (click)="back()" class="btn w-btn-default"><span class="help">Back</span></a></li>
                                 </ul>
                             </div>
                             <div class="mailDetails">
@@ -68,8 +44,3 @@
                     </div>
 
                 </div>
-
-            </div>
-        </div>
-
-    </section>

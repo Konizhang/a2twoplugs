@@ -218,7 +218,7 @@ label[for="active_btn"],label[for="bidding_btn"]{
 
 
 .messages .container .content {
-    margin-top: 50px;
+    margin-top: 0px;
 }
 
 
@@ -317,11 +317,18 @@ app-root{
     margin-right: 10px;
 }
 
-.tpsloagn{
-  
-}
 
 #splash_slogan{
     margin-top: 20px;
     margin-left: 150px;
+}
+
+.sendmessage{
+    clear:none;
+    width: 50em!important;
+}
+
+.messages .container .controlPanel {
+    padding: 0 0 6px;
+ 
 }

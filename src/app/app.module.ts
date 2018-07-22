@@ -35,10 +35,11 @@ import { MessageComponent } from './message/message.component';
 import { EditprofileComponent } from './profile/editprofile.component';
 import { EditserviceComponent } from './service/editservice.component';
 
-import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
-import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
+
 import { MessagedetailComponent } from './message/messagedetail.component';
-import { TestComponent } from './test/test.component';
+
+import { SendmessageComponent } from './message/sendmessage.component';
+import { InboxComponent } from './message/inbox.component';
 
 
 @NgModule({
@@ -62,19 +63,16 @@ import { TestComponent } from './test/test.component';
     EditprofileComponent,
     EditserviceComponent,
     MessagedetailComponent,
-    TestComponent,
- 
+    SendmessageComponent,
+    InboxComponent
    ],
   imports: [
-   
-    AlertModule,
     BrowserModule,
     CommonModule,
     FormsModule,
     routing,
     HttpModule,
-    ReactiveFormsModule,
-    Ng2Bs3ModalModule
+    ReactiveFormsModule
   ],
   providers: [ServiceService,ProfileService,UserService,AuthService,GuardService,MessageService,BaseService,HttpclientService],
   entryComponents: [AppComponent],

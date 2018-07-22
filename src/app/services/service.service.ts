@@ -1,11 +1,11 @@
-import { HttpclientService } from './httpclient.service';
+
 import { Injectable } from '@angular/core';
 import { Service } from '../model/services';
 import { Category } from '../model/category';
 import { BaseService}  from '../services/BaseService';
 import { Http, Headers }  from '@angular/http';
 
-
+import { HttpclientService } from './httpclient.service';
 
 import 'rxjs/add/operator/map';
 

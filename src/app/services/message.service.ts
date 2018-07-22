@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { BaseService}  from '../services/BaseService';
 import { Http, Headers }  from '@angular/http';
 import { Message } from '../model/message';
+
+import { HttpclientService } from './httpclient.service';
+
 @Injectable()
 
 export class MessageService extends BaseService{
@@ -14,20 +17,20 @@ export class MessageService extends BaseService{
   size = 10;
 
   url : string = "";
-  constructor(private http : Http) {
-    super();
-   }
 
+ constructor(private http: HttpclientService) {
+      super();
+      this.http = http;
+  }
   getMessage(id:number){ 
 
    return  this.http.get(this.base_url+'/'+this.endpoint+'/'+id).map(res => res.json() as Message);
   }
 
   getMessages(user_id:number){ 
-   this.url = this.base_url+'/'+this.endpoint+'/search/findBySender_IdOrReceiver_Id/?sid='+ this.currentUser+"&rid="+this.currentUser+"&size="+this.size;
-   this.url =this.base_url+'/'+this.endpoint+"/?size="+this.size;
-
-   return  this.http.get(this.url).map(res => res.json());
+   this.url = this.base_url+'/'+this.endpoint+'/search/findBySender_IdOrReceiver_Id/?projection=MessageDetail&sid='+ user_id+"&rid="+user_id+"&size="+this.size;
+  
+   return  this.http.get(this.url).map(res => res.json()._embedded.messages as Message[]);
   }
 
   deleteMessage(id:number){ 

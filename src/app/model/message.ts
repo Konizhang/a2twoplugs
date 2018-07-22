@@ -6,5 +6,5 @@ export class Message {
     receiver:User;
     title:String;
     content:String;
-    is_read:Boolean;
+    isRead:Boolean;
 }

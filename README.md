@@ -16,8 +16,9 @@ Todo
 
 1)add category to service 
 2)add review to service details
-
 4)add transaction to page.
 
 
 form-group  has-error
+
+#2018-07-22  updat to angular 6.0.9

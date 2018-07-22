@@ -6,132 +6,25 @@
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active">
-          <a routerLink="/messages" aria-controls="home" role="tab" data-toggle="tab"><span class="help">Inbox <span class="badge pull-right">{{total}}</span></span></a>
+          <a routerLink="/messages/inbox" aria-controls="home" role="tab" data-toggle="tab"><span class="help">Inbox <span class="badge pull-right">{{total}}</span></span></a>
         </li>
         <li role="presentation">
-          <a href="#unread" aria-controls="profile" role="tab" data-toggle="tab"><span class="help">Unread <span class="badge pull-right">12</span></span></a>
+          <a routerLink="/messages" aria-controls="profile" role="tab" data-toggle="tab"><span class="help">Unread </span></a>
         </li>
         <li role="presentation">
-          <a href="#sentMail" aria-controls="messages" role="tab" data-toggle="tab"><span class="help">Sent Mail <span class="badge pull-right">12</span></span></a>
+          <a routerLink="/sendmessage" aria-controls="messages" role="tab" data-toggle="tab"><span class="help">Sent Mail </span></a>
         </li>
       </ul>
       <div class="text-center">
-        <a class="btn btn-create" href="javascript:void(0)"  (click)="modal.open()">
+        <a class="btn btn-create" routerLink="/messages/sendmessage">
           <span class="circle"><span class="w-icons-create"></span></span>
           <span class="help" >new email</span>
         </a>
       </div>
     </aside>
-    <div class="content">
-      <!-- Tab panes -->
-      <div class="tab-content">
-        <div class="controlPanel clearfix">
-          <div class="pull-left">
-            <ul class="btn-holder clearfix">
-              <!--<li class="check">-->
-              <!--<label for="checkAll1" class="bone">-->
-              <!--<input type="checkbox" id="checkAll1"/>-->
-              <!--<span class="help">All</span>-->
-              <!--</label>-->
-              <!--</li>-->
-              <li class="check-no-style">
-             
-                <label for="checkAll" class="bone">
-                                            <span (click)="toggle()" class="help">All</span>
-                                        </label>
-              </li>
-              <li>
-                <a href="#" class="bone">
-                  <span class="help">Make Read</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="bone">
-                  <span class="help">Make Unread</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="bone">
-                  <span class="help">Delete</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <!--<div class="pull-right">
-            <div class="filter-label">SORT BY</div>
-            <div class="cuSelect">
-              <select>
-                                        <option>Sender</option>
-                                        <option>Date</option>
-                                    </select>
-            </div>
-           
-          </div>-->
-        </div>
-        <div role="tabpanel" class="tab-pane active" id="inbox">
-          <table class="table-message">
-            <tr *ngFor="let message of messages" >
-              <td>
-                <div class="check-no-style theme2">
-                  <input type="checkbox" id="{{message.id}}" [checked]="ischecked"/>
-                  <label for="{{message.id}}"></label>
-                </div>
-                <span class="help"><span class="w-icons-letter"></span> <a href="#">{{message.sender.username}}</a></span>
-              </td>
-              <td><a routerLink="/messages/{{message.id}}">{{message.title}}</a></td>
-              <td>
-                <div class="light" [innerHTML]="message.content"></div>
-              </td>
-              <td>
-                <div class="date">{{message.createdAt| date:'y-M-d'}}
-                  <div>{{message.createdAt| date:'shortTime'}}</div>
-                </div>
-              </td>
-            </tr>
-           
-          </table>
-        </div>
-        <div role="tabpanel" class="tab-pane" id="unread"></div>
-        <div role="tabpanel" class="tab-pane" id="sentMail"></div>
-        <nav class="text-center">
-          <ul class="pagination clearfix">
-            <li class="prev">
-              <a href="#" aria-label="Previous">
-                <span aria-hidden="true" class="help">&laquo;</span>
-              </a>
-            </li>
-            <li class="active"><a href="#"><span class="help">1</span></a></li>
-            <li><a href="#"><span class="help">2</span></a></li>
-            <li><a href="#"><span class="help">3</span></a></li>
-            <li><a href="#"><span class="help">...</span></a></li>
-            <li><a href="#"><span class="help">56</span></a></li>
-            <li class="next">
-              <a href="#" aria-label="Next">
-                <span aria-hidden="true" class="help">&raquo;</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-    </div>
+    <router-outlet></router-outlet>
 
   </div>
 </div>
 
-<modal [animation]="animationsEnabled" (onClose)="onClose($event)" #modal>
-    <modal-header [show-close]="true">
-      <h4 class="modal-title">Send Message</h4>
-    </modal-header>
-    <modal-body>
-      <ul>
-       
-      </ul>
-      Selected: <b>{{ modalSelected }}</b>
-    </modal-body>
-    <modal-footer>
-      <button type="button" class="btn btn-success w-btn-success" data-dismiss="modal" (click)="navigateModal.dismiss()"><span class="help">Cancel</span></button>
-      <button type="button" class="btn btn-success w-btn-success" autofocus (click)="navigateModal.close()"><span class="help">asd</span></button>
-    </modal-footer>
-  </modal>
 </section>

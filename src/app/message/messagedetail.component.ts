@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { MessageService } from '../services/message.service';
 import { Message } from '../model/message';
 import { ActivatedRoute } from '@angular/router';
+import {Location} from '@angular/common';
+
+
+
 
 @Component({
   selector: 'app-messagedetail',
@@ -11,8 +15,8 @@ import { ActivatedRoute } from '@angular/router';
 export class MessagedetailComponent implements OnInit {
   id:  string ;
   message : Message;
- 
-  constructor( private messageService:MessageService,
+
+  constructor(private _location: Location, private messageService:MessageService,
                 private router:ActivatedRoute) { }
 
   ngOnInit() {
@@ -27,4 +31,8 @@ export class MessagedetailComponent implements OnInit {
      })
   }
 
+
+back() {
+        this._location.back();
+    }
 }

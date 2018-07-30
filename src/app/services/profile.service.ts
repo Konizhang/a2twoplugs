@@ -19,14 +19,14 @@ export class ProfileService extends BaseService{
       super();
   }
 
-  getProfile(profile_id:number):Observable<Profile>{ 
-   return  this.http.get(this.base_url+'/'+this.endpoint+'/'+profile_id).map(res => 
+  getProfile(profile_id:number):Observable<Profile>{
+   return  this.http.get(this.base_url+'/'+this.endpoint+'/'+profile_id).map(res =>
      res.json() as Profile
      );
   }
 
-///users/15/profile 
-getProfileByUser(user_id:number):Observable<Profile>{ 
+///users/15/profile
+getProfileByUser(user_id:number):Observable<Profile>{
    return  this.http.get(this.base_url+'/users/'+user_id+'/profile').map(res => res.json() as Profile);
   }
 
@@ -36,5 +36,11 @@ getProfileByUser(user_id:number):Observable<Profile>{
     const body =JSON.stringify(profile);
     return this.http.post(this.base_url + this.endpoint,body);
   }
+
+  getLoginProfile():Observable<Profile>{
+    return  this.http.get(this.base_url+'/me').map(res =>
+      res.json() as Profile
+      );
+   }
 
 }

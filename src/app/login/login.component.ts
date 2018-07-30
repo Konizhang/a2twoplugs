@@ -11,11 +11,11 @@ import { FormsModule } from "@angular/forms";
 
 })
 export class LoginComponent implements OnInit {
- 
+
   public loginUser: User;
   logedinheader: String;
   islogin: boolean;
-
+  username:String;
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private authservice: AuthService) {
 
   }
@@ -31,6 +31,8 @@ export class LoginComponent implements OnInit {
             console.log(resp)
           localStorage.setItem('auth_token', resp.access_token);
           localStorage.setItem('refresh_token', resp.refresh_token);
+          localStorage.setItem('username',this.loginUser.username);
+          this.username = this.loginUser.username;
           this.islogin = true;
           this.logedinheader = "logedinheader";
           this.router.navigate(['/service']);
@@ -39,9 +41,9 @@ export class LoginComponent implements OnInit {
 
     )
     ;
-   
+
 
   }
- 
+
 
 }

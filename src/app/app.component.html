@@ -70,7 +70,11 @@
     </header>
     <header *ngIf="isAuth()" Class="logedinheader" >
         <div class="container">
+
+
+
             <ul class="control-bar">
+                <li><a class="btn" ><span class="help">{{getUsername()}}</span></a></li>
                 <li><a class="btn border" (click)="logout()" routerLinkActive="active"><span class="help">LOG out</span></a></li>
             </ul>
 
@@ -96,7 +100,7 @@
             </nav>
         </div>
     </header>
-  
+
       <router-outlet></router-outlet>
 </div>
  <app-frontfooter></app-frontfooter>

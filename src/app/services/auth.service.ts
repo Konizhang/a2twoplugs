@@ -5,8 +5,12 @@ import { Router } from "@angular/router";
 
 @Injectable()
 export class AuthService {
+
   loggedIn = false;
   credentails: String;
+
+  username: String;
+
   constructor(private http: Http, private router: Router) {
     this.loggedIn = !!localStorage.getItem('auth_token');
   }
@@ -27,15 +31,15 @@ export class AuthService {
         urlSearchParams.append('clientId', 'mobileclient');
         urlSearchParams.append('secret', 'twoplugs.com');
         let body = urlSearchParams.toString()
-        
+
         let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
-            headers.append("Authorization", "Basic " + btoa("mobileclient" + ":" + "twoplugs.com")); 
+            headers.append("Authorization", "Basic " + btoa("mobileclient" + ":" + "twoplugs.com"));
         let options = new RequestOptions( {method: RequestMethod.Post, headers: headers });
 
 
 
-        return  this.http.post("http://localhost:3721/oauth/token?username=koni&password=1234567a",body,options).map(res => res.json()); 
-  
+        return  this.http.post("http://localhost:8088/oauth/token?username=koni&password=1234567c",body,options).map(res => res.json());
+
          //localStorage.setItem('auth_token', "ad3eb8fc-66a6-4cca-ae8a-c7c60f3ffbb8");
   }
 
@@ -45,17 +49,23 @@ export class AuthService {
     this.router.navigate(['/signin']);
   }
 
+  getUsername(){
+
+    return  localStorage.getItem('username');
+
+  }
+
   isAuthenticated() {
 
     this.credentails = localStorage.getItem('auth_token');
-     
+
     if (this.credentails !== null) {
       this.loggedIn = true;
     } else {
-     
+
       this.loggedIn = false;
     }
-   
+
     return this.loggedIn ;
   }
 }
